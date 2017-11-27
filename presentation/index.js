@@ -14,7 +14,6 @@ import {
   BlockQuote,
   Quote,
   Cite,
-  CodePane,
   Layout,
   Fill,
   Appear
@@ -58,6 +57,10 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 const colors = theme.screen.colors;
+const highlightedHeader = {
+  color: colors.highlight,
+  fontWeight: "bold"
+};
 
 export default class Presentation extends React.Component {
   render() {
@@ -83,7 +86,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" margin=" 0 0 30px">
             The state of the
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> web </S>
+            <S type="" style={highlightedHeader}> web </S>
             in 2017
           </Heading>
           <Layout>
@@ -108,7 +111,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" margin=" 0 0 30px">
             JS
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> performance: </S>
+            <S type="" style={highlightedHeader}> performance: </S>
             why does it suck?
           </Heading>
           <List type="A" textColor="regular">
@@ -122,7 +125,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" margin=" 0 0 30px">
             A significant step:
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> asm </S>
+            <S type="" style={highlightedHeader}> asm </S>
             .js
           </Heading>
           <List type="A" textColor="regular">
@@ -141,7 +144,7 @@ export default class Presentation extends React.Component {
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" margin=" 0 0 30px">
           <Heading size={4} textColor="regular">
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}>Web</S>
+            <S type="" style={highlightedHeader}>Web</S>
             Assembly
           </Heading>
           <List type="A" textColor="regular">
@@ -162,7 +165,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" margin=" 0 0 30px">
             It's a compile
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> target</S>
+            <S type="" style={highlightedHeader}> target</S>
           </Heading>
           <Image display="block" height="500" src={images.compile} />
         </Slide>
@@ -170,7 +173,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" margin=" 0 0 30px">
             asm.js
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> vs. </S>
+            <S type="" style={highlightedHeader}> vs. </S>
             WebAssembly
           </Heading>
           <Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">equivalent (for now, to support polyfilling)</Text>
@@ -209,7 +212,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg" margin=" 0 0 30px">
           <Heading size={2} textColor="regular">
             Speed is everything
-            <Appear><S type="" style={{ color: colors.highlight, fontWeight: "bold" }}>?</S></Appear>
+            <Appear><S type="" style={highlightedHeader}>?</S></Appear>
           </Heading>
         </Slide>
         {/* ************************************    ************************************ */}
@@ -217,7 +220,7 @@ export default class Presentation extends React.Component {
           <BlockQuote>
             <Quote textSize={75} textColor="regular">
               WebAssembly is a way to run programming languages
-              <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> other </S>
+              <S type="" style={highlightedHeader}> other </S>
               than JavaScript on web pages.
             </Quote>
             <Cite textSize={50} textColor="highlight">Lin Clark</Cite>
@@ -231,7 +234,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             The
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> drawbacks </S>
+            <S type="" style={highlightedHeader}> drawbacks </S>
             of cross-platform web development
           </Heading>
           <List type="A" textColor="regular">
@@ -252,7 +255,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             The evolution of
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> join.</S>
+            <S type="" style={highlightedHeader}> join.</S>
             me
           </Heading>
           <Layout>
@@ -358,7 +361,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             Does the
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> language </S>
+            <S type="" style={highlightedHeader}> language </S>
             matter?
           </Heading>
           <Appear>
@@ -372,7 +375,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             How do we
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> organize</S>
+            <S type="" style={highlightedHeader}> organize</S>
             ?
           </Heading>
           <Layout>
@@ -415,7 +418,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             How do we
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> organize</S>
+            <S type="" style={highlightedHeader}> organize</S>
             ?
           </Heading>
           <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">Trust is key</Heading>
@@ -426,14 +429,14 @@ export default class Presentation extends React.Component {
             <Heading size={6} textColor="white" bgColor="highlight" padding="10px" margin="10px">Communication through PR's: too little, too late</Heading>
           </Appear>
           <Appear>
-            <Heading size={6} textColor="white" bgColor="highlight" padding="10px" margin="10px">Diverse team</Heading>
+            <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">Diverse team</Heading>
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             How will
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}> WASM </S>
+            <S type="" style={highlightedHeader}> WASM </S>
             help us?
           </Heading>
           <Heading size={5} bgColor="regular" textColor="white" lineHeight="1.5em" padding="10px" margin="10px">Performance</Heading>
@@ -498,7 +501,7 @@ export default class Presentation extends React.Component {
             Thank You!
           </Heading>
           <Text margin="10px 0 0" textColor="regular" size={1} fit bold>
-            <S type="" style={{ color: colors.highlight, fontWeight: "bold" }}>@</S>
+            <S type="" style={highlightedHeader}>@</S>
             BenedekGagyi
           </Text>
         </Slide>
