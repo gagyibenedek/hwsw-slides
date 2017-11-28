@@ -178,9 +178,11 @@ export default class Presentation extends React.Component {
           </Heading>
           <Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">equivalent (for now, to support polyfilling)</Text>
           <Layout>
+
             <Fill>
               <List textColor="highlight" margin={10} >
                 <ListItem textSize="2rem">pushed by Mozilla</ListItem>
+                <br />
                 <ListItem textSize="2rem">minify, zip / unzip</ListItem>
                 <ListItem textSize="2rem">warm-up time</ListItem>
                 <ListItem textSize="2rem">garbage collection</ListItem>
@@ -201,8 +203,8 @@ export default class Presentation extends React.Component {
               </List>
             </Fill>
           </Layout>
-          <Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">no interpretation step</Text>
-          <Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">can access DOM and other browser APIs</Text>
+          <Appear><Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">no interpretation step</Text></Appear>
+          <Appear><Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">can access DOM and other browser APIs</Text></Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.slow}/>
@@ -228,7 +230,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Image src={images.hot} height="80vh"/>
+          <Image src={images.hot} height="80vh" style={{ maxHeight: "700px" }}/>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
@@ -396,7 +398,6 @@ export default class Presentation extends React.Component {
                 <List type="A" textColor="regular" padding="10px" margin="5px 10px">
                   <ListItem>product</ListItem>
                   <ListItem>fast development, long queuing</ListItem>
-                  <br/>
                   <ListItem>ideal for big steps</ListItem>
                   <ListItem>it's easy to get left behind</ListItem>
                 </List>
